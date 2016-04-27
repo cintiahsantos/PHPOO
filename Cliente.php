@@ -6,46 +6,43 @@
  * Date: 05/11/2015
  * Time: 10:51
  */
-class Cliente
+require_once "EnderecoCobrancaInterface.php";
+class Cliente implements EnderecoCobrancaInterface
 {
-    private $codigo;
-    private $nome;
-    private $cpf;
-    private $dt_nascimento;
-    private $endereco;
-    private $cidade;
-    private $estado;
-    private $telefone;
-    private $email;
+    protected $codigo;
+    protected $nome;
+    protected $endereco;
+    protected $cidade;
+    protected $estado;
+    protected $telefone;
+    protected $email;
+    protected $enderecoCobranca;
+    protected $cidadeCobranca;
+    protected $estadoCobranca;
 
-    public function __construct($codigo, $nome, $cpf, $dt_nascimento, $endereco, $cidade, $estado, $telefone, $email)
+    public function __construct($codigo, $nome, $endereco, $cidade, $estado, $telefone, $email,
+                                $enderecoCobranca,$cidadeCobranca,$estadoCobranca )
     {
         $this->codigo = $codigo;
         $this->nome = $nome;
-        $this->cpf = $cpf;
-        $this->dt_nascimento = $dt_nascimento;
         $this->endereco = $endereco;
         $this->cidade = $cidade;
         $this->estado = $estado;
         $this->telefone = $telefone;
         $this->email = $email;
+        $this->enderecoCobranca = $enderecoCobranca;
+        $this->cidadeCobranca = $cidadeCobranca;
+        $this->estadoCobranca = $estadoCobranca;
     }
     public function getCodigo()
     {
         return $this->codigo;
     }
-    public function getNome()
+        public function getNome()
     {
         return $this->nome;
     }
-    public function getCPF()
-    {
-        return $this->cpf;
-    }
-    public function getDtNascimento()
-    {
-        return $this->dt_nascimento;
-    }
+
     public function getEndereco()
     {
         return $this->endereco;
@@ -66,4 +63,35 @@ class Cliente
     {
         return $this->email;
     }
+
+    public function getEnderecoCobranca()
+    {
+        return $this->enderecoCobranca;
+    }
+
+    public function setEnderecoCobranca($enderecoCobranca)
+    {
+        $this->enderecoCobranca = $enderecoCobranca;
+    }
+
+    public function getCidadeCobranca()
+    {
+        return $this->cidadeCobranca;
+    }
+
+    public function setCidadeCobranca($cidadeCobranca)
+    {
+        $this->cidadeCobranca = $cidadeCobranca;
+    }
+
+    public function getEstadoCobranca()
+    {
+        return $this->estadoCobranca;
+    }
+
+    public function setEstadoCobranca($estadoCobranca)
+    {
+        $this->estadoCobranca = $estadoCobranca;
+    }
+
 }

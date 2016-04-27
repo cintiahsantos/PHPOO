@@ -17,7 +17,7 @@ require_once "header.php";
     }else{
         ksort($vCliente);
     }
-?>
+    ?>
 <form method="post">
     <button class="btn btn-warning" type="submit" value="cres" name="cres">Ordem Crescente</button>
     <button class="btn btn-warning " type="submit" value="dec" name="dec">Ordem Decrescente</button>
@@ -29,18 +29,22 @@ require_once "header.php";
         <th>Nome</th>
         <th>E-mail</th>
         <th>Telefone</th>
+        <th>Tipo Pessoa</th>
         <th>Visualizar</th>
     </tr>
     </thead>
     <tbody>
     <?php
     foreach ($vCliente as $key => $value) {
+        if($value instanceof PessoaFisica)
+        {"PF";}else{"PJ";};
         ?>
         <tr>
             <td><?php echo $value->getCodigo();?></td>
             <td><?php echo $value->getNome();?></td>
             <td><?php echo $value->getEmail();?></td>
             <td><?php echo $value->getTelefone();?></td>
+            <td><?php if($value instanceof PessoaFisica){echo 'PF';}else{echo 'PJ';};?></td>
             <td><a href="VisualizarCliente.php?codigo=<?php echo $value->getCodigo();?>"><button class="btn btn-info " type="submit" name="visualizar" >Visualizar</button></a></td>
         </tr>
         <?php
