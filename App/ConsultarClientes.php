@@ -5,9 +5,11 @@
  * Date: 12/11/2015
  * Time: 11:18
  */
-require_once "header.php";
-?>
-<h1>Lista de Clientes</h1>
+require_once 'Util/header.php';
+require_once 'CadastroClientes.php';
+use PMRO\Cliente\Types\PessoaFisica;
+
+?><h1>Lista de Clientes</h1>
 <div class="jumbotron">
     <?php
     if(isset($_POST['cres'])){
@@ -45,7 +47,9 @@ require_once "header.php";
             <td><?php echo $value->getEmail();?></td>
             <td><?php echo $value->getTelefone();?></td>
             <td><?php if($value instanceof PessoaFisica){echo 'PF';}else{echo 'PJ';};?></td>
-            <td><a href="VisualizarCliente.php?codigo=<?php echo $value->getCodigo();?>"><button class="btn btn-info " type="submit" name="visualizar" >Visualizar</button></a></td>
+            <td><a href="App/VisualizarCliente.php?codigo=<?php echo $value->getCodigo();?>">
+                    <button class="btn btn-info " type="submit" name="visualizar" >Visualizar</button>
+                </a></td>
         </tr>
         <?php
     }
@@ -54,5 +58,5 @@ require_once "header.php";
 </table>
 </div>
 <?php
-require_once "footer.php";
+require_once 'Util/footer.php';
 ?>

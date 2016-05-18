@@ -6,6 +6,8 @@
  * Date: 18/04/2016
  * Time: 09:39
  */
+namespace PMRO\Cliente\Util;
+
 interface EnderecoCobrancaInterface
 {
     public function getEnderecoCobranca();

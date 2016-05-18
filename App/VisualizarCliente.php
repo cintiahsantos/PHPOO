@@ -6,7 +6,12 @@
  * Time: 11:41
  */
 
-require_once "header.php";
+require_once '../Util/header.php';
+require_once 'CadastroClientes.php';
+require_once "../src/PMRO/Cliente/Types/PessoaFisica.php";
+
+use PMRO\Cliente\Types\PessoaFisica;
+
 IF(isset($_GET)) {
         $indice = $_GET["codigo"] - 1;
 }
@@ -84,11 +89,11 @@ else
         </table>";
 };
 ?>
-<a href="index.php"><button class="btn btn-info " >Voltar</button></a>
+<a href="../index.php"><button class="btn btn-info " >Voltar</button></a>
 </div><!-- /jumbotron -->
 
 <?php
-require_once "footer.php";
+require_once "../Util/footer.php";
 ?>
 
 

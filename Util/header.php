@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 date_default_timezone_set('America/Sao_Paulo');
-require_once __DIR__ . '/CadastroClientes.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,7 +12,7 @@ require_once __DIR__ . '/CadastroClientes.php';
          <title>Projeto PHP Orientado a Objetos</title>
 
          <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">

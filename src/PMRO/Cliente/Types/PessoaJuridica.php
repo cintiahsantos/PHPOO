@@ -7,8 +7,9 @@
  * Time: 11:09
  */
 
-require_once "Cliente.php";
-require_once "ClienteInterface.php";
+namespace PMRO\Cliente\Types;
+use PMRO\Cliente\Cliente;
+use PMRO\Cliente\Util\ClienteInterface;
 
 class PessoaJuridica extends Cliente implements ClienteInterface
 {

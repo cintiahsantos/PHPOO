@@ -6,7 +6,10 @@
  * Date: 05/11/2015
  * Time: 10:51
  */
-require_once "EnderecoCobrancaInterface.php";
+
+namespace PMRO\Cliente;
+use PMRO\Cliente\Util\EnderecoCobrancaInterface;
+
 class Cliente implements EnderecoCobrancaInterface
 {
     protected $codigo;
